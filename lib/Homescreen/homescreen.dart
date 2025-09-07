@@ -314,35 +314,31 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   const SizedBox(height: 10),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   
                     children: [
                       const Text(
                         "Featured Categories :",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.left,
                       ),
+                      const Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: InkWell(
-                          onTap: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (context) => ,))
-                          },
-                          child: InkWell(onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => 
-                           const Seeall(),));
-                          },
-                            child: const Text(
-                              "See All",
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.right,
+                        child: InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => 
+                         const Seeall(),));
+                        },
+                          child: const Text(
+                            "See All",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
                             ),
+                            textAlign: TextAlign.right,
                           ),
                         ),
                       )
@@ -389,7 +385,7 @@ class _HomescreenState extends State<Homescreen> {
                       Text(
                         "All Products :",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -438,7 +434,7 @@ class _HomescreenState extends State<Homescreen> {
                                             "Its not valid",
                                       ),
                                       // product["thumbnail"]),
-                                      fit: BoxFit.contain,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
@@ -485,7 +481,7 @@ class _HomescreenState extends State<Homescreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           icon!,
-          Text(
+          Text(maxLines: 1,
             text!,
             style: const TextStyle(fontWeight: FontWeight.bold),
           )

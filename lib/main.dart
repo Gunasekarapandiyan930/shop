@@ -2,6 +2,7 @@ import 'package:apkrestart/Homescreen/homescreen.dart';
 import 'package:apkrestart/Categories/categories.dart';
 import 'package:apkrestart/Profile/profilee.dart';
 import 'package:apkrestart/accountpage.dart';
+import 'package:apkrestart/splashscreen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       
       
-      home: Categories(),
+      home: SplashScareen(),
     );
   }
 }
@@ -78,7 +79,7 @@ class MainState extends State<Main> {
         color: const Color(0xFF4A148C),
 
         onTap: _onItem,
-        // onTap: _onItemTapped,
+       
         items: const [
           Icon(
             Icons.home,

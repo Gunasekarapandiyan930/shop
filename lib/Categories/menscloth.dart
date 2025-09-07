@@ -100,56 +100,7 @@ class _MensclothState extends State<Menscloth> {
   },
 ];
 
-  // List design = [
-  //   {
-  //     'Image':
-  //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY3GfQEtHIoZk3wqOspOCsbNXE_r4w07mcpg&s',
-  //     'Text': 'Black Jacket'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://ramrajcotton.in/cdn/shop/files/241019_Ramraj_e-com11316_f42d1fd2-fd6f-4266-92f6-9d82b9af9a95.jpg?v=1738065339&width=1080',
-  //     'Text': 'White Dhotie'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTmLP9i8bRRaeynrBcXFyXxjmYbBAhf6KNZOgrB0sGrl33cKwpoePmE5yR8jwsa9g1DOc&usqp=CAU',
-  //     'Text': 'Blue Jeans'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGPOVBUwIfl7jyVjBw5_4ImhR_zc4ZqE0bqHA4nA1dWTiMNjbtSZ0o50q01DCi9jZjurk&usqp=CAU',
-  //     'Text': 'Trendy Kurtie'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNMTGC4Gn8HicF3dVTzczcBOcySRIUfv5hIA&s',
-  //     'Text': 'TrackPant'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPA1bVW4WBFaSz35GOsdeZhh9bfZmZVUkXsuOoUi8c77A7aey1eyeJDyAL0CF10GylEq0&usqp=CAU',
-  //     'Text': 'Trendy Wear'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/15557590/2022/2/18/a88d594a-0184-4042-baad-01c2d7874cec1645166286136-Roadster-Men-Shirts-4091645166285596-1.jpg',
-  //     'Text': 'Casual Shirt'
-  //   },
-  //   {
-  //     'Image': 'https://m.media-amazon.com/images/I/81jfggAT40L._UY1100_.jpg',
-  //     'Text': 'Printed T-shirt'
-  //   },
-  //   {
-  //     'Image':
-  //         'https://cdn18.nnnow.com/web-images/large/styles/CZ16X76M54I/1666342523136/1.jpg',
-  //     'Text': 'Trouser'
-  //   },
-  //   {
-  //     'Image': 'https://images.indianexpress.com/2023/06/varun-dhawan-2.jpg',
-  //     'Text': 'Shorts'
-  //   },
-  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,7 +139,7 @@ class _MensclothState extends State<Menscloth> {
                   width: 150,
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  child: Column(
+                 /* child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ClipRRect(
@@ -214,7 +165,35 @@ class _MensclothState extends State<Menscloth> {
                             const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                       ))
                     ],
-                  ),
+                  ),*/
+                  child: Column(
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Expanded(
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(13),
+          topRight: Radius.circular(13),
+        ),
+        child: Image.network(
+          design[index]['image'],
+          fit: BoxFit.cover,
+          width: double.infinity,
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: Text(
+        design[index]['name'],
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+        textAlign: TextAlign.center,
+        overflow: TextOverflow.ellipsis, 
+      ),
+    ),
+  ],
+),
+
                 ),
               ),
             ),

@@ -35,7 +35,7 @@ class _SignUpState extends State<SignUp> {
   final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomInset: true,
       body: Form(
         key: formkey,
         child: Container(
