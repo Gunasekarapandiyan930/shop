@@ -1,3 +1,4 @@
+
 import 'package:apkrestart/Homescreen/homescreen.dart';
 import 'package:apkrestart/Categories/categories.dart';
 import 'package:apkrestart/Profile/profilee.dart';
@@ -5,9 +6,14 @@ import 'package:apkrestart/accountpage.dart';
 import 'package:apkrestart/splashscreen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
+Future<void>_firebaseMessagingBackgroundHandler(RemoteMessage msg)async{
+  await Firebase.initializeApp();
+  print("Bg msg:${msg.messageId}");}
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -17,6 +23,7 @@ void main() async {
     messagingSenderId: "860686353761",
     projectId:"shopping-ea557",
   ));
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 
@@ -45,6 +52,7 @@ class Main extends StatefulWidget {
 class _MainState {}
 
 class MainState extends State<Main> {
+  String? token;
   final List<Widget> _screens = [
     const Center(child: Text(" Home Page", style: TextStyle(fontSize: 25))),
     const Center(
@@ -61,6 +69,17 @@ class MainState extends State<Main> {
     const AccountPage(),
     const Profile(),
   ];
+  @override
+  void initState() {
+   
+    super.initState();
+    FirebaseMessaging.instance.requestPermission();
+    FirebaseMessaging.instance.getToken().then((t){
+      setState(() { token = t ; });});
+        FirebaseMessaging.onMessage.listen((RemoteMessage message) {   });
+           FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {  });
+
+  }
 
   void _onItem(int index) {
     setState(() {
