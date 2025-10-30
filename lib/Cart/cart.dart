@@ -1,8 +1,7 @@
-import 'package:apkrestart/Cart/edit.dart';
-import 'package:apkrestart/Profile/personal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -94,7 +93,8 @@ class _CartState extends State<Cart> {
                        InkWell(
                         child: const CircleAvatar(radius: 30, child: Icon(Icons.person)),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Personal(),));
+                          context.pushNamed('profile');
+                          
                         },
                         ),
                       Positioned(
@@ -108,11 +108,8 @@ class _CartState extends State<Cart> {
                             child: const Icon(Icons.edit,
                                 size: 16, color: Colors.purple),
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Edit(mydata: details),
-                                  ));
+                              context.pushNamed('edit');
+                             
                             },
                           ),
                         ),

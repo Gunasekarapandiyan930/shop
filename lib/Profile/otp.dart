@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EnterOTP extends StatefulWidget {
   final String verificationId;
@@ -52,7 +53,7 @@ class _EnterOTPState extends State<EnterOTP> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(height: 50,width: 50,color: Colors.grey[400],
+                    Container(height: 50,width: 50.w,color: Colors.grey[400],
                       child: TextFormField(
                         controller: otp,
                         style: const TextStyle(
@@ -68,7 +69,7 @@ class _EnterOTPState extends State<EnterOTP> {
                         ),
                       ),
                     ),
-                     Container(height: 50,width: 50,color: Colors.grey[400],
+                     Container(height: 50.h,width: 50.w,color: Colors.grey[400],
                       child: TextFormField(
                         style: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -83,7 +84,7 @@ class _EnterOTPState extends State<EnterOTP> {
                         ),
                       ),
                     ),
-                     Container(height: 50,width: 50,color: Colors.grey[400],
+                     Container(height: 50.h,width: 50.w,color: Colors.grey[400],
                       child: TextFormField(
                         style: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -98,7 +99,7 @@ class _EnterOTPState extends State<EnterOTP> {
                         ),
                       ),
                     ),
-                     Container(height: 50,width: 50,color: Colors.grey[400],
+                     Container(height: 50.h,width: 50.w,color: Colors.grey[400],
                       child: TextFormField(
                         style: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -115,17 +116,17 @@ class _EnterOTPState extends State<EnterOTP> {
                     ),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 12.0),
+                 Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
                   child: Row(
                     children: [
-                      Text("Don't receive OTP?",
+                      const Text("Don't receive OTP?",
                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25
                         ),),
-                        SizedBox(width: 10,),
-                         Text("Resend OTP",
+                        SizedBox(width: 10.w,),
+                         const Text("Resend OTP",
                        style: TextStyle(
                         color: Colors.red,
                           fontWeight: FontWeight.bold,
@@ -145,7 +146,7 @@ class _EnterOTPState extends State<EnterOTP> {
   
                 },
                   child: Container(
-                  height: 50,
+                  height: 50.h,
                   width: 350,
                   color: Colors.red[400],
                   child: const Center(

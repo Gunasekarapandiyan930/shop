@@ -1,5 +1,5 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Cellphones extends StatefulWidget {
   const Cellphones({super.key});
@@ -158,8 +158,8 @@ class _CellphonesState extends State<Cellphones> {
           return Padding(
             padding: const EdgeInsets.all(7.0),
             child: InkWell(onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>
-               Detailingwomens(allproducts:cellphones[index] ),));
+              context.pushNamed('details',extra:cellphones[index] );
+            
             },
               child: Card(
                 elevation: 6,

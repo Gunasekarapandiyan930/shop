@@ -1,5 +1,6 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Topsellers extends StatefulWidget {
   const Topsellers({super.key});
@@ -78,7 +79,7 @@ class _TopsellersState extends State<Topsellers> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+           context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -104,27 +105,27 @@ class _TopsellersState extends State<Topsellers> {
                 itemCount: topSellers.length,
                 itemBuilder: (context, index) =>
                  InkWell(onTap: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                    Detailingwomens(allproducts: topSellers[index]),));
+                   context.pushNamed('buying',extra:topSellers[index] );
+                
                  },
                    child: Card(
                     elevation: 8,
                      child: Container(
-                     // height:1200,
+                  
                       margin: const EdgeInsets.all(10),
-                     // color: Colors.blue,
+                 
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                          
                            Image.asset(
                               topSellers[index]["image"],
-                             // height: 120,
+                            
                               width: double.infinity,
                               fit: BoxFit.contain,
-                              // fit: BoxFit.contain,
+                            
                             ),
-                            const SizedBox(height: 10),
+                             SizedBox(height: 10.h),
                           
                           Text(
                             topSellers[index]["name"],
@@ -133,7 +134,7 @@ class _TopsellersState extends State<Topsellers> {
                               fontSize: 15,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                           SizedBox(height: 10.h),
                           Text("\$${topSellers[index]["price"].toString()}",
                             
                             style: const TextStyle(

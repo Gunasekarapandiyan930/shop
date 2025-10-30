@@ -1,17 +1,8 @@
-import 'package:apkrestart/Categories/beauty.dart';
-import 'package:apkrestart/Categories/cellphones.dart';
-import 'package:apkrestart/Categories/electronics.dart';
-import 'package:apkrestart/Categories/toys.dart';
-import 'package:apkrestart/Homescreen/brands.dart';
-import 'package:apkrestart/Homescreen/flashdeal.dart';
-import 'package:apkrestart/Homescreen/search.dart';
-import 'package:apkrestart/Homescreen/seeall.dart';
-import 'package:apkrestart/Homescreen/todaysdeal.dart';
-import 'package:apkrestart/Homescreen/buyingscreen.dart';
-import 'package:apkrestart/Homescreen/topsellers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -152,14 +143,11 @@ class _HomescreenState extends State<Homescreen> {
                     padding: const EdgeInsets.all(25.0),
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Search(),
-                            ));
+                          context.pushNamed('search');
+                       
                       },
                       child: Container(
-                        height: 40,
+                        height: 40.h,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(65),
@@ -169,11 +157,7 @@ class _HomescreenState extends State<Homescreen> {
                           textAlign: TextAlign.center,
                           readOnly: true,
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Search(),
-                                ));
+                             context.pushNamed('search');
                           },
                           decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.search),
@@ -188,27 +172,23 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                   SizedBox(height: 10.h),
                   SizedBox(
-                      height: 200,
+                      height: 200.h,
                       child: CarouselSlider(
                           items: curosilepic,
                           options: CarouselOptions(
                             autoPlay: true,
                           ))), // carosile
-                  const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
                   SizedBox(
-                    height: 50,
+                    height: 50.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Todaysdeal(),
-                                ));
+                              context.pushNamed('todays');
                           },
                           child: Center(
                             child: category(
@@ -219,11 +199,7 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         InkWell(
                           onTap: () {
-                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Flashdeal(),
-                                ));
+                            context.pushNamed('flash');
                         },
                           child: category(
                               color: Colors.lightBlue,
@@ -232,11 +208,7 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         InkWell(
                           onTap: () {
-                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Brands(),
-                                ));
+                           context.pushNamed('brands');
                         },
                           child: category(
                               color: Colors.grey,
@@ -244,11 +216,7 @@ class _HomescreenState extends State<Homescreen> {
                               icon: const Icon(Icons.branding_watermark_rounded)),
                         ),
                         InkWell(onTap: () {
-                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Topsellers(),
-                                ));
+                            context.pushNamed('top');
                         },
                           child: category(
                               color: Colors.green,
@@ -260,7 +228,7 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 200,
+                    height: 200.h,
                     child: ListView.builder(
                       itemCount: builder.length,
                       shrinkWrap: true,
@@ -269,34 +237,22 @@ class _HomescreenState extends State<Homescreen> {
                         onTap: () {
                           if (builder[index]==
                               "https://cdn.create.vista.com/downloads/f71e849c-b5cf-41ca-942b-db3d4f6d4bf9_1024.jpeg") {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Beauty()));
+                      context.pushNamed('beauty');
                           }
                           else   if (builder[index]== "https://cdn.create.vista.com/downloads/679701ae-8df6-413a-85cb-483329cd4132_1024.jpeg"
                             ) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Electronics()));
+                             context.pushNamed('electronic');
                           } else   if (builder[index]== "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/kids-toys-design-template-9099417ca39510d628e0315998efe4d0_screen.jpg?ts=1709208032"
                             ) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Toys()));
+                             context.pushNamed('toys');
                           } else   if (builder[index]==  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/phone-collection-sale-design-template-9572ce5b3f85a0af70e508ecfaab8869_screen.jpg?ts=1686909741"
                             ) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Cellphones()));
+                          context.pushNamed('cell');
                           }
                         },
                         child: Container(
-                          height: 150,
-                          width: 150,
+                          height: 150.h,
+                          width: 150.w,
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
@@ -312,7 +268,7 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+              SizedBox(height: 10.h),
                   Row(
                    
                     children: [
@@ -328,8 +284,8 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: InkWell(onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => 
-                         const Seeall(),));
+                          context.push('/seeall');
+                      
                         },
                           child: const Text(
                             "See All",
@@ -344,11 +300,11 @@ class _HomescreenState extends State<Homescreen> {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
                   SizedBox(
-                    height: 220,
+                    height: 220.h,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: products.length,
@@ -360,8 +316,8 @@ class _HomescreenState extends State<Homescreen> {
                               elevation: 4,
                               margin: const EdgeInsets.all(10),
                               child: Container(
-                                height: 150,
-                                width: 150,
+                                height: 150.h,
+                                width: 150.w,
                                 margin: const EdgeInsets.all(10),
                                 child: Image.network(
                                   products[index]['image'],
@@ -391,7 +347,7 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                   SizedBox(height: 10.h),
                   Container(
                     color: Colors.white,
                     child: GridView.builder(
@@ -414,16 +370,11 @@ class _HomescreenState extends State<Homescreen> {
                               // Product Image
                               InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Buyingscreen(
-                                          documents: productlist[index],
-                                        ),
-                                      ));
+                                  context.pushNamed('/buying',extra: productlist[index]);
+                               
                                 },
                                 child: Container(
-                                  height: 200,
+                                  height: 200.h,
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.vertical(
@@ -439,7 +390,7 @@ class _HomescreenState extends State<Homescreen> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
+                              SizedBox(height: 10.h),
                               // Title
                               Text(maxLines: 1,
                                 productlist[index]["title"] ?? "No Title",
@@ -447,7 +398,7 @@ class _HomescreenState extends State<Homescreen> {
                                     fontSize: 14, fontWeight: FontWeight.bold),
                               ),
               
-                              const SizedBox(height: 5),
+                            SizedBox(height: 5.h),
                               // Price
                               Text(
                                 productlist[index]["price"].toString(),
@@ -471,8 +422,8 @@ class _HomescreenState extends State<Homescreen> {
   Container category({Icon? icon, String? text, Color? color}) {
     return Container(
       margin: const EdgeInsets.all(3),
-      height: 60,
-      width: 120,
+      height: 60.h,
+      width: 120.w,
       decoration: BoxDecoration(
         color: color!,
         borderRadius: BorderRadius.circular(20),

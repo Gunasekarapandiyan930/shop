@@ -1,10 +1,14 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Buyingscreen extends StatefulWidget {
- final Map documents ;
-  const Buyingscreen({super.key, required this.documents,});
+  final Map documents;
+
+  const Buyingscreen({
+    super.key,
+    required this.documents,
+  });
 
   @override
   State<Buyingscreen> createState() => _BuyingscreenState();
@@ -14,51 +18,59 @@ class _BuyingscreenState extends State<Buyingscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.red,
-        leading: IconButton(onPressed: () {
-                  Navigator.pop(context);
-                }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
-                title: Text(widget.documents['title'],style: const TextStyle(color: Colors.white),),
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        leading: IconButton(
+            onPressed: () {
+             context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
+        title: Text(
+          widget.documents['title'],
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           
             const SizedBox(height: 12),
             SizedBox(
               height: 400,
               width: double.infinity,
-             // color: Colors.greenAccent,
-              child: 
-              Stack(
-                children:[
-                  Positioned.fill(child:   Image.network(widget.documents['thumbnail']??
-                                            "Its not valid",
-                fit: BoxFit.cover,), ),
-                Positioned(top: 10,right: 10,
+              // color: Colors.greenAccent,
+              child: Stack(children: [
+                Positioned.fill(
+                  child: Image.network(
+                    widget.documents['thumbnail'] ?? "Its not valid",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  top: 10,
+                  right: 10,
                   child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.favorite_outline_outlined)), )
-                 
-                
-                 
-                ]
-              ),
+                      onPressed: () {},
+                      icon: const Icon(Icons.favorite_outline_outlined)),
+                )
+              ]),
             ),
             const SizedBox(height: 12),
-             Row(
+            Row(
               children: [
                 const Text(
                   "Discount:",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  width: 123,
+                SizedBox(
+                  width: 123.w,
                 ),
                 Text(widget.documents["discountPercentage"].toString()),
-              /*  CircleAvatar(
+                /*  CircleAvatar(
                   radius: 15,
                   backgroundColor: Colors.purple,
                   child: FittedBox(
@@ -124,54 +136,57 @@ class _BuyingscreenState extends State<Buyingscreen> {
                     ),
                   ),
                 ),*/
-                const SizedBox(
-                  width: 10,
+                SizedBox(
+                  width: 10.w,
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            const Expanded(
+            Expanded(
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     "Color:",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    width: 150,
+                    width: 150.w,
                   ),
-                  CircleAvatar(radius: 15, backgroundColor: Colors.red),
+                  const CircleAvatar(radius: 15, backgroundColor: Colors.red),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
-                  CircleAvatar(radius: 15, backgroundColor: Colors.black),
+                  const CircleAvatar(radius: 15, backgroundColor: Colors.black),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
-                  CircleAvatar(radius: 15, backgroundColor: Colors.yellow),
+                  const CircleAvatar(
+                      radius: 15, backgroundColor: Colors.yellow),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
-                  CircleAvatar(radius: 15, backgroundColor: Colors.blue),
+                  const CircleAvatar(radius: 15, backgroundColor: Colors.blue),
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Row(
               children: [
                 const Text(
                   "Description:",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  width: 100,
+                SizedBox(
+                  width: 100.w,
                 ),
-                SizedBox(width: 100,
-                  child: Text(maxLines: 2,
-                   widget.documents['title'],
+                SizedBox(
+                  width: 100.w,
+                  child: Text(
+                    maxLines: 2,
+                    widget.documents['title'],
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -187,8 +202,8 @@ class _BuyingscreenState extends State<Buyingscreen> {
                     "Price:",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    width: 150,
+                  SizedBox(
+                    width: 150.w,
                   ),
                   Text(
                     widget.documents['price'].toString(),
@@ -199,14 +214,14 @@ class _BuyingscreenState extends State<Buyingscreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 26),
+            SizedBox(height: 26.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   alignment: Alignment.center,
                   margin: const EdgeInsets.all(10),
-                  height: 50,
+                  height: 50.h,
                   width: MediaQuery.of(context).size.width / 3,
                   decoration: BoxDecoration(
                     color: Colors.red,
@@ -220,7 +235,7 @@ class _BuyingscreenState extends State<Buyingscreen> {
                 Container(
                   alignment: Alignment.center,
                   margin: const EdgeInsets.all(10),
-                  height: 50,
+                  height: 50.h,
                   width: MediaQuery.of(context).size.width / 3,
                   decoration: BoxDecoration(
                     color: Colors.blue,

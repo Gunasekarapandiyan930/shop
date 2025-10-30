@@ -1,5 +1,7 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Flashdeal extends StatefulWidget {
   const Flashdeal({super.key});
@@ -72,7 +74,7 @@ class _FlashdealState extends State<Flashdeal> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+             context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -98,8 +100,7 @@ class _FlashdealState extends State<Flashdeal> {
                 itemCount: flashdeals.length,
                 itemBuilder: (context, index) =>
                  InkWell(onTap: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                    Detailingwomens(allproducts: flashdeals[index]),));
+                   context.pushNamed('buying',extra: flashdeals[index]);
                  },
                    child: Card(
                     elevation: 8,
@@ -118,7 +119,7 @@ class _FlashdealState extends State<Flashdeal> {
                               fit: BoxFit.contain,
                               // fit: BoxFit.contain,
                             ),
-                            const SizedBox(height: 10),
+                             SizedBox(height: 10.h),
                           
                           Text(
                             flashdeals[index]["name"],
@@ -127,7 +128,7 @@ class _FlashdealState extends State<Flashdeal> {
                               fontSize: 15,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                           SizedBox(height: 10.h),
                           Text("\$${flashdeals[index]["price"].toString()}",
                             
                             style: const TextStyle(

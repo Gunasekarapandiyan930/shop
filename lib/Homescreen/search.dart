@@ -1,6 +1,8 @@
 
-import 'package:apkrestart/Categories/detailingwomens.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -136,15 +138,14 @@ List imagee = [
            
               children: [
                  InkWell(onTap: (){
-                  Navigator.pop(context);
-                 },
+                context.pop();                 },
                   child: const Icon(Icons.arrow_back)),
-                  const SizedBox(width: 20,),
+                   SizedBox(width: 20.w,),
                 Center(
                   child: Container(
                     alignment: Alignment.center,
-                    height: 40,
-                    width: 300,
+                    height: 40.h,
+                    width: 300.w,
                     decoration: BoxDecoration(
                         color: Colors.grey[400],
                         borderRadius: BorderRadius.circular(20)),
@@ -162,8 +163,8 @@ List imagee = [
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
          
           const Row(
@@ -174,8 +175,8 @@ List imagee = [
               ),
             ],
           ),
-          const SizedBox(
-            height: 10,
+         SizedBox(
+            height: 10.h,
           ),
           Column(
             children: [
@@ -187,26 +188,26 @@ List imagee = [
                     mainAxisSpacing: 5,
                     childAspectRatio: 0.8),
                 itemBuilder: (context, index) => InkWell(onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => 
-                  Detailingwomens(allproducts: imagee[index],),));
+                    context.pushNamed('buying',extra:imagee[index] );
+                
                 },
                   child: Container(
-                    height: 60,
-                    width: 60,
+                    height: 60.h,
+                    width: 60.w,
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2)),
+                        border: Border.all(color: Colors.black, width: 2.w)),
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 150,
-                          width: 160,
+                          height: 150.h,
+                          width: 160.w,
                           child: Image.asset(
                             imagee[index]['image'],
                             fit: BoxFit.fill,
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
+                         SizedBox(
+                          height: 5.h,
                         ),
                         Text(
                           imagee[index]['name'],

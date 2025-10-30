@@ -1,5 +1,7 @@
-import 'package:apkrestart/Homescreen/todaysapi.dart';
+import 'package:apkrestart/Repo/todaysapi.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Todaysdeal extends StatefulWidget {
   const Todaysdeal({super.key});
@@ -29,7 +31,7 @@ class _TodaysdealState extends State<Todaysdeal> {
       appBar: AppBar(backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+      context.pop();
             },
             icon: const Icon(Icons.arrow_back,color: Colors.white,)),
         title: const Text(
@@ -63,12 +65,12 @@ class _TodaysdealState extends State<Todaysdeal> {
                        
                          Image.network(
                             apidesign[index]["images"][0],
-                           // height: 120,
+                           
                             width: double.infinity,
                             fit: BoxFit.contain,
                             // fit: BoxFit.contain,
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                         
                         Text(
                           apidesign[index]["title"].toString(),
@@ -77,7 +79,7 @@ class _TodaysdealState extends State<Todaysdeal> {
                             fontSize: 15,
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         Text(
                           apidesign[index]["price"].toString(),
                           style: const TextStyle(

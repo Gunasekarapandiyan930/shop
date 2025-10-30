@@ -1,13 +1,8 @@
-import 'package:apkrestart/Categories/comicbooks.dart';
-import 'package:apkrestart/Categories/electronics.dart';
-import 'package:apkrestart/Categories/homedecoration.dart';
-import 'package:apkrestart/Categories/kidscloth.dart';
-import 'package:apkrestart/Categories/menscloth.dart';
-import 'package:apkrestart/Categories/womenscloth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Seeall extends StatefulWidget {
- 
   const Seeall({super.key});
 
   @override
@@ -21,12 +16,12 @@ class _SeeallState extends State<Seeall> {
       "image":
           "https://www.shutterstock.com/image-photo/interior-living-room-green-houseplants-260nw-2290526749.jpg"
     },
-     {
+    {
       "name": "Books",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLhhuXDxCOgl5j3wOaHP9nyP19xtjKFMzvgA&s"
     },
-     {
+    {
       "name": "Kitchen's Products",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0tHSb3GIHPs_3Eq0ZJMlwEmypoUt5ZMSGx-nYTuNaTnOLv7HPVRkXi9_F-NwBJSJPwpk&usqp=CAU"
@@ -36,7 +31,6 @@ class _SeeallState extends State<Seeall> {
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkz9LkYqIsUvqnhEisFQlsKSBVz_s7sIMTeqjDiO-mzfRNbmv-d7U2eJok0mR0ADSryQI&usqp=CAU"
     },
-   
     {
       "name": "Women's Fashion",
       "image":
@@ -47,17 +41,15 @@ class _SeeallState extends State<Seeall> {
       "image":
           "https://img.pikbest.com/origin/06/30/33/663pIkbEsTfY9.jpg!w700wp"
     },
-   
-    
   ];
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -68,38 +60,42 @@ class _SeeallState extends State<Seeall> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-         body: GridView.builder(
+      body: GridView.builder(
         itemCount: grid.length,
-        gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 0.75,
         ),
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(7.0),
-            child: InkWell(onTap: () {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) =>
-              //  Detailingwomens(allproducts:automobiles[index] ),));
-            },
-              child: InkWell(onTap: () {
-                if (grid[index]["name"]=="Men's Fashion") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Menscloth(),));  } 
-                 else  if (grid[index]["name"]=="Women's Fashion") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Womenscloth(),));  } 
-                 else  if (grid[index]["name"]=="kids's Fashion") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Kidscloth(),));  } 
-                  else  if (grid[index]["name"]=="Kitchen's Products") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Electronics(),));  }
-                   else  if (grid[index]["name"]== "Home Appliances") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Homedecoration(),));  }  
-                   else  if (grid[index]["name"]== "Books") {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Comicbooks(),));  }  
+            child: InkWell(
+              onTap: () {
+                context.pushNamed('buying', extra: grid[index]);
+      
               },
+              child: InkWell(
+                onTap: () {
+                  if (grid[index]["name"] == "Men's Fashion") {
+                    context.pushNamed('mens');
+                  } else if (grid[index]["name"] == "Women's Fashion") {
+                   context.pushNamed('womens');
+                  } else if (grid[index]["name"] == "kids's Fashion") {
+                    context.pushNamed('kids');
+                  } else if (grid[index]["name"] == "Kitchen's Products") {
+                   
+                     context.pushNamed('electronic');
+                  } else if (grid[index]["name"] == "Home Appliances") {
+                   context.pushNamed('homedecor');
+                  } else if (grid[index]["name"] == "Books") {
+                    context.pushNamed('comic');
+                  }
+                },
                 child: Card(
                   elevation: 6,
                   child: Container(
-                    height: 150,
-                    width: 150,
+                    height: 150.h,
+                    width: 150.w,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(20)),
                     child: Column(
@@ -111,7 +107,7 @@ class _SeeallState extends State<Seeall> {
                             topRight: Radius.circular(13),
                           ),
                           child: SizedBox(
-                            height: 220,
+                            height: 220.h,
                             width: double.infinity,
                             child: Image.network(
                               grid[index]['image']!,
@@ -119,13 +115,12 @@ class _SeeallState extends State<Seeall> {
                             ),
                           ),
                         ),
-                        
-                
                         Center(
-                            child: Text(maxLines: 1,
+                            child: Text(
+                          maxLines: 1,
                           grid[index]['name']!,
-                          style:
-                              const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
                         ))
                       ],
                     ),

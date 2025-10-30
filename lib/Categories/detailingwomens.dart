@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Detailingwomens extends StatefulWidget {
+
+  
   final Map allproducts;
   const Detailingwomens({super.key, required this.allproducts});
 
@@ -15,7 +18,7 @@ class _DetailingwomensState extends State<Detailingwomens> {
     return Scaffold(backgroundColor: const Color(0xFFfef5f1),
      appBar: AppBar(backgroundColor: Colors.red,
         leading: IconButton(onPressed: () {
-                  Navigator.pop(context);
+                 context.pop();
                 }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
                 title: Text(widget.allproducts['name'],style: const TextStyle(color: Colors.white),),
       ),
@@ -26,7 +29,7 @@ class _DetailingwomensState extends State<Detailingwomens> {
               child: Stack(
                 children: [
                   Positioned(top: 20,right: 20,
-                    child: IconButton(onPressed: () {Navigator.pop(context);
+                    child: IconButton(onPressed: () {context.pop();
                     
                   }, icon: const Icon(Icons.favorite))),
                   Positioned.fill(child: Image.asset(fit: BoxFit.cover,

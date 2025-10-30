@@ -1,6 +1,7 @@
-import 'package:apkrestart/Profile/registration.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Signin extends StatelessWidget {
@@ -51,20 +52,20 @@ class _SignUpState extends State<SignUp> {
             ),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 20,
+               SizedBox(
+                  height: 20.h,
                 ),
                 Row(
                   children: [
                     IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                      context.pop();
                         },
                         icon: const Icon(
                           Icons.arrow_back,
                           size: 25,
                         )),
-                    const SizedBox(width: 20),
+                  SizedBox(width: 20.w),
                     const Text(
                       "Signup",
                       style: TextStyle(
@@ -74,8 +75,8 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
+               SizedBox(
+                  height: 30.h,
                 ),
                 Container(margin: const EdgeInsets.all(20),  decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
                   child: TextFormField(
@@ -168,12 +169,12 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
+              SizedBox(
+                  height: 30.h,
                 ),
                 Container(
-                  height: 50,
-                  width: 120,
+                  height: 50.h,
+                  width: 120.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.purple,
@@ -186,11 +187,7 @@ class _SignUpState extends State<SignUp> {
                               .createUserWithEmailAndPassword(
                                   email: name.text, password: password.text);
                           print("Password:${password.text}");
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Register(),
-                              ));
+                        context.pushNamed('register');
                         }
                       },
                       child: const Text(

@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:apkrestart/Profile/profilee.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScareen extends StatefulWidget {
   const SplashScareen({super.key});
@@ -14,7 +14,7 @@ class _SplashScareenState extends State<SplashScareen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 2),(){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile(),));
+       context.pushNamed('profile');
     });
     super.initState();
   }

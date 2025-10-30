@@ -1,5 +1,5 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Electronics extends StatefulWidget {
   const Electronics({super.key});
@@ -138,7 +138,7 @@ class _ElectronicsState extends State<Electronics> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+             context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -159,8 +159,7 @@ class _ElectronicsState extends State<Electronics> {
           return Padding(
             padding: const EdgeInsets.all(7.0),
             child: InkWell(onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>
-               Detailingwomens(allproducts:electronics[index] ),));
+               context.pushNamed('details',extra: electronics[index]);
             },
               child: Card(
                 elevation: 6,

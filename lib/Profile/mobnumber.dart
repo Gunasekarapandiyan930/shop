@@ -1,6 +1,7 @@
 import 'package:apkrestart/Profile/otp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MobileNumber extends StatefulWidget {
   const MobileNumber({super.key});
@@ -19,7 +20,7 @@ class _MobileNumberState extends State<MobileNumber> {
         
         children: [
           SizedBox(
-            height: 450,
+            height: 450.h,
           // color: Colors.lightBlue,
             child: Center(
               child: Image.network(fit: BoxFit.fill,height: 300,
@@ -27,7 +28,7 @@ class _MobileNumberState extends State<MobileNumber> {
               ),
             ),
           ),
-          const SizedBox(height: 20,),
+          SizedBox(height: 20.h,),
           const Padding(
             padding: EdgeInsets.all(12.0),
             child: Row(
@@ -45,15 +46,15 @@ class _MobileNumberState extends State<MobileNumber> {
               ],
             ),
           ),
-           const SizedBox(height: 20,),
+            SizedBox(height: 20.h,),
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Row(
                  
                   children: [
                     Container(
-                      height: 50,width: 70,decoration: BoxDecoration(
-                        border: Border.all(width: 2)
+                      height: 50.h,width: 70,decoration: BoxDecoration(
+                        border: Border.all(width: 2.w)
                       ),
                       child: const Center(
                         child: Text("+91",
@@ -64,11 +65,11 @@ class _MobileNumberState extends State<MobileNumber> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 30
+                     SizedBox(
+                      width: 30.w
                     ),
                       Container(
-                      height: 50,width: 270,decoration: const BoxDecoration(
+                      height: 50.h,width: 270.w,decoration: const BoxDecoration(
                        // border: Border.all(width: 2)
                       ),
                       child: TextFormField(keyboardType: TextInputType.number,
@@ -88,7 +89,7 @@ class _MobileNumberState extends State<MobileNumber> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30,),
+               SizedBox(height: 30.h,),
              InkWell(onTap:() async {
               await FirebaseAuth.instance.verifyPhoneNumber(
             phoneNumber: (countrycode + mobnumber.text),
@@ -102,8 +103,8 @@ class _MobileNumberState extends State<MobileNumber> {
              
              },
                child: Container(
-                height: 50,
-                width: 350,
+                height: 50.h,
+                width: 350.w,
                 color: Colors.red[400],
                 child: const Center(
                   child: Text(

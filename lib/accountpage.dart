@@ -1,5 +1,7 @@
-import 'package:apkrestart/Cart/edit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -46,17 +48,17 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title:  const Text(
           "Account",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white),
         ),
-        actions: const [
-          Icon(
+        actions:  [
+          const Icon(
             Icons.settings,
             color: Colors.white,
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 10.w),
         ],
         backgroundColor: Colors.red,
         elevation: 0,
@@ -76,7 +78,7 @@ class _AccountPageState extends State<AccountPage> {
                   backgroundImage: NetworkImage(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNcpockMAuShiAgEXZMpFLQGgJNYIw2pfnRJ5AHfCTZJNYJ1DasbedZaQUlAwU8zKskYk&usqp=CAU"), // Profile Image
                 ),
-                const SizedBox(width: 10),
+                 SizedBox(width: 10.w),
                 const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,30 +93,34 @@ class _AccountPageState extends State<AccountPage> {
                 ),
                 InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Edit(),
-                          ));
+                    context.pushNamed('edit');
                     },
                     child: const Icon(Icons.edit, color: Colors.black)),
               ],
             ),
-            const SizedBox(height: 25),
+           SizedBox(height: 25.h),
 
             // Refer & Earn
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
-                    Text("Refer", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
-                    Text("15",
+                    InkWell(
+                        onTap: () {
+        Share.share(
+          'Hey! Check out this awesome app!',
+          subject: 'Share Option',
+        );
+      },
+                   
+                      child: const Text("Share", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold))),
+                    const Text("15",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold)),
                   ],
                 ),
-                Column(
+                const Column(
                   children: [
                     Text("Earn", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
                     Text("1502",
@@ -124,7 +130,7 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 25),
+           SizedBox(height: 25.h),
 
             // Orders, Return, Delivered Buttons
             Row(
@@ -138,7 +144,7 @@ class _AccountPageState extends State<AccountPage> {
                     "Delivered", "10", Colors.deepOrange),
               ],
             ),
-            const SizedBox(height: 25),
+           SizedBox(height: 25.h),
 
             // Menu Items
 
@@ -146,15 +152,15 @@ class _AccountPageState extends State<AccountPage> {
               Icons.payment,
               "Payment & Refund",
             ),
-            const SizedBox(height: 15),
+        SizedBox(height: 15.h),
             AccountPage._menuItem(Icons.language, "Change Language"),
-            const SizedBox(height: 15),
+        SizedBox(height: 15.h),
 
             AccountPage._menuItem(
                 Icons.account_balance_wallet, "Wallet Amount"),
-            const SizedBox(height: 15),
+             SizedBox(height: 15.h),
             AccountPage._menuItem(Icons.account_balance, "Bank & UPI Details"),
-            const SizedBox(height: 15),
+         SizedBox(height: 15.h),
             AccountPage._menuItem(Icons.logout, "Logout", color: Colors.red),
           ],
         ),

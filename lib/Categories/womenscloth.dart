@@ -1,5 +1,6 @@
 import 'package:apkrestart/Categories/detailingwomens.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Womenscloth extends StatefulWidget {
   const Womenscloth({super.key});
@@ -172,7 +173,7 @@ class _WomensclothState extends State<Womenscloth> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+          context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,

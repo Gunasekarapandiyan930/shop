@@ -1,8 +1,6 @@
-import 'package:apkrestart/main.dart';
-import 'package:apkrestart/Profile/mobnumber.dart';
-import 'package:apkrestart/Profile/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -177,12 +175,7 @@ class _MyWidgetState extends State<Profile> {
                                     .signInWithEmailAndPassword(
                                         email: email.text,
                                         password: password.text);
-
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const Main(),
-                                    ));
+                                     context.pushNamed('main');
 
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(const SnackBar(
@@ -212,11 +205,7 @@ class _MyWidgetState extends State<Profile> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const SignUp(),
-                                      ));
+                                context.pushNamed('signup');
                                 },
                                 child: const Text(
                                   "Sign Up",
@@ -283,11 +272,7 @@ class _MyWidgetState extends State<Profile> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const MobileNumber(),
-                                ));
+                            context.pushNamed('mobile');
                           },
                           child: CircleAvatar(
                               backgroundColor: Colors.white,

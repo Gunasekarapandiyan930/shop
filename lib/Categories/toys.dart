@@ -1,5 +1,5 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Toys extends StatefulWidget {
   const Toys({super.key});
@@ -137,7 +137,7 @@ class _ToysState extends State<Toys> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+             context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -158,8 +158,7 @@ class _ToysState extends State<Toys> {
           return Padding(
             padding: const EdgeInsets.all(7.0),
             child: InkWell(onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>
-               Detailingwomens(allproducts:toys[index] ),));
+         context.pushNamed('details',extra: toys[index]);
             },
               child: Card(
                 elevation: 6,

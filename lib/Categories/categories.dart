@@ -1,15 +1,5 @@
-import 'package:apkrestart/Categories/automobile.dart';
-import 'package:apkrestart/Categories/beauty.dart';
-import 'package:apkrestart/Categories/cellphones.dart';
-import 'package:apkrestart/Categories/comicbooks.dart';
-import 'package:apkrestart/Categories/electronics.dart';
-import 'package:apkrestart/Categories/homedecoration.dart';
-import 'package:apkrestart/Categories/kidscloth.dart';
-import 'package:apkrestart/Categories/menscloth.dart';
-import 'package:apkrestart/Categories/sports.dart';
-import 'package:apkrestart/Categories/toys.dart';
-import 'package:apkrestart/Categories/womenscloth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -116,29 +106,28 @@ class _CategoriesState extends State<Categories> {
               child: InkWell(
                 onTap: () {
                   if(Fashion[index]["Text"] =="Men's Clothes" ){
-
- Navigator.push(context, MaterialPageRoute(builder: (context) =>const Menscloth(),));
+                    context.pushNamed('mens');
 
                 }else if(Fashion[index]["Text"]== "Women's clothes"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Womenscloth(),));
+                    context.pushNamed('womens');
                 }else if(Fashion[index]["Text"]=="Kid's Clothes"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Kidscloth(),));
+                    context.pushNamed('kids');
                 }else if(Fashion[index]["Text"]=="Automobiles"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Automobile(),));
+                    context.pushNamed('auto');
                 }else if(Fashion[index]["Text"]=="Sports"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Sports(),));
+                    context.pushNamed('sports');
                 }else if(Fashion[index]["Text"]=="Home Decoration"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Homedecoration(),));
+                    context.pushNamed('homedecor');
                 }else if(Fashion[index]["Text"]=="Beauty Products"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Beauty(),));
+                    context.pushNamed('beauty');
                 }else if(Fashion[index]["Text"]=="Toys"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Toys(),));
+                   context.pushNamed('toys');
                 }else if(Fashion[index]["Text"]=="Cellphones"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Cellphones(),));
+                   context.pushNamed('cell');
                 }else if(Fashion[index]["Text"]=="Electronics Items"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Electronics(),));
+                    context.pushNamed('electronic');
                 }else if(Fashion[index]["Text"]=="Comic Books"){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Comicbooks(),));
+                   context.pushNamed('comic');
                 }
                   },
                  

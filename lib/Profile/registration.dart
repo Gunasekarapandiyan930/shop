@@ -1,8 +1,9 @@
-import 'package:apkrestart/Profile/profilee.dart';
-import 'package:apkrestart/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -57,13 +58,13 @@ class _SignupState extends State<Register> {
                       children: [
                         IconButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                         context.pop();
                             },
                             icon: const Icon(
                               Icons.arrow_back,
                               size: 25,
                             )),
-                        const SizedBox(width: 20),
+                         SizedBox(width: 20.w),
                         const Text(
                           "Registration",
                           style: TextStyle(
@@ -74,8 +75,8 @@ class _SignupState extends State<Register> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
+                   SizedBox(
+                    height: 30.h,
                   ),
                   TextFormField(
                     controller: firstname,
@@ -96,8 +97,8 @@ class _SignupState extends State<Register> {
                         ),
                         border: OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                 SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: lastname,
@@ -118,8 +119,8 @@ class _SignupState extends State<Register> {
                         ),
                         border: OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                  SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: email,
@@ -140,8 +141,8 @@ class _SignupState extends State<Register> {
                               borderSide: BorderSide(color: Colors.lightBlue),
                             ), border: OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                 SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: dob,
@@ -163,8 +164,8 @@ class _SignupState extends State<Register> {
                             ),
                          border: OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                 SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: phonenumber,
@@ -187,8 +188,8 @@ class _SignupState extends State<Register> {
                         
                          border: OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                  SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: password,
@@ -217,8 +218,8 @@ class _SignupState extends State<Register> {
                             ),
                         border: const OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 24,
+                 SizedBox(
+                    height: 24.h,
                   ),
                   TextFormField(
                     controller: confirmpassword,
@@ -249,11 +250,14 @@ class _SignupState extends State<Register> {
                             ),
                         border: const OutlineInputBorder()),
                   ),
-                  const SizedBox(
-                    height: 30,
+        SizedBox(
+                    height: 30.h,
                   ),
                   ElevatedButton(
                     onPressed: () async {
+                      final SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setString("name", firstname.text);
+                      
                       if (formkey.currentState!.validate()) {
                         var uid = FirebaseAuth.instance.currentUser!.uid;
                         await FirebaseFirestore.instance
@@ -276,11 +280,7 @@ class _SignupState extends State<Register> {
                           backgroundColor: Colors.green,
                           duration: Duration(seconds: 1),
                         ));
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Main(),
-                            ));
+                       context.pushNamed('main');
                       }
                     },style: ButtonStyle( backgroundColor:WidgetStateProperty.all<Color>(Colors.purple),),
                     child:  const Text(
@@ -289,8 +289,8 @@ class _SignupState extends State<Register> {
                       fontSize: 20),
                     ),
                   ),
-                  const SizedBox(
-                    height: 24,
+                SizedBox(
+                    height: 24.h,
                   ),
                   Wrap(
   spacing: 8, 
@@ -312,56 +312,28 @@ class _SignupState extends State<Register> {
         ),
       ),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const Profile()),
-        );
+      context.pushNamed('profile');
       },
     ),
   ],
 ),
-                 /* Row(
-                    children: [
-                      const Text("Already have an account?",
-                       style: TextStyle(fontWeight: FontWeight.bold,
-                      fontSize: 18),),
-                      const SizedBox(
-                        width: 14,
-                      ),
-                      InkWell(
-                        child: const Text(
-                          'Log In',
-                          style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.bold,
-                              fontSize: 18),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Profile(),
-                              ));
-                        },
-                      )
-                    ],
-                  ),*/
-                  const SizedBox(
-                    height: 12,
+                   SizedBox(
+                    height: 12.h,
                   ),
                   const Divider(),
-                  const SizedBox(
-                    height: 12,
+                  SizedBox(
+                    height: 12.h,
                   ),
                   Container(
-                    height: 50,
-                    width: 250,
-                    decoration: BoxDecoration(border: Border.all(width: 2)),
+                    height: 50.h,
+                    width: 250.w,
+                    decoration: BoxDecoration(border: Border.all(width: 2.w)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.network(
                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdKMbkSnZrrX1GK4BdQ3NiDDsV7QROaFEpmQ&s",
-                          height: 30,
+                          height: 30.h,
                         ),
                         const Text(
                           "Sign up with Google",

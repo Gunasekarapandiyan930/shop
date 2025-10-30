@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Personal extends StatefulWidget {
   const Personal({super.key});
@@ -36,8 +37,8 @@ class _PersonalState extends State<Personal> {
         ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 20,
+             SizedBox(
+              height: 20.h,
             ),
             ListTile(
               leading: CircleAvatar(
@@ -50,15 +51,15 @@ class _PersonalState extends State<Personal> {
               subtitle:
                   const Text("Ganthipuram, Coimbathore", style: TextStyle(fontSize: 16)),
             ),
-            const SizedBox(
-              height: 12,
+             SizedBox(
+              height: 12.h,
             ),
-            const Row(
+             Row(
               children: [
                 SizedBox(
-                  height: 80,
+                  height: 80.h,
                   width: 100,
-                  child: Column(
+                  child: const Column(
                     children: [
                       Text("Refer",
                           style: TextStyle(
@@ -69,13 +70,13 @@ class _PersonalState extends State<Personal> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 12,
                 ),
                 SizedBox(
-                  height: 80,
+                  height: 80.h,
                   width: 100,
-                  child: Column(
+                  child: const Column(
                     children: [
                       Text("Earn",
                           style: TextStyle(
@@ -86,15 +87,15 @@ class _PersonalState extends State<Personal> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 100,
                 ),
-                Icon(
+                const Icon(
                   Icons.update,
                   size: 30,
                 ),
-                SizedBox(width: 12),
-                Icon(
+                const SizedBox(width: 12),
+                const Icon(
                   Icons.edit,
                   size: 30,
                 )
@@ -109,7 +110,7 @@ class _PersonalState extends State<Personal> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 80,
+                    height: 80.h,
                     width: 120,
                     decoration: BoxDecoration(
                         color: Colors.green[400],
@@ -129,7 +130,7 @@ class _PersonalState extends State<Personal> {
                     ),
                   ),
                   Container(
-                    height: 80,
+                    height: 80.h,
                     width: 120,
                     decoration: BoxDecoration(
                         color: Colors.lightBlue[400],
@@ -153,7 +154,7 @@ class _PersonalState extends State<Personal> {
                     ),
                   ),
                   Container(
-                    height: 80,
+                    height: 80.h,
                     width: 120,
                     decoration: BoxDecoration(
                         color: Colors.orange[400],

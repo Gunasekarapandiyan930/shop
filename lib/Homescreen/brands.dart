@@ -1,5 +1,7 @@
-import 'package:apkrestart/Categories/detailingwomens.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Brands extends StatefulWidget {
   const Brands({super.key});
@@ -67,7 +69,7 @@ class _BrandsState extends State<Brands> {
         backgroundColor: Colors.red,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              context.pop();
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -93,8 +95,8 @@ class _BrandsState extends State<Brands> {
                 itemCount: brands.length,
                 itemBuilder: (context, index) =>
                  InkWell(onTap: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                    Detailingwomens(allproducts: brands[index]),));
+                    context.pushNamed('buying',extra: brands[index]);
+                
                  },
                    child: Card(
                     elevation: 8,
@@ -113,7 +115,7 @@ class _BrandsState extends State<Brands> {
                               fit: BoxFit.contain,
                               // fit: BoxFit.contain,
                             ),
-                            const SizedBox(height: 10),
+                           SizedBox(height: 10.h),
                           
                           Text(
                             brands[index]["name"],
@@ -122,7 +124,7 @@ class _BrandsState extends State<Brands> {
                               fontSize: 15,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                           SizedBox(height: 10.h),
                           Text("\$${brands[index]["price"].toString()}",
                             
                             style: const TextStyle(

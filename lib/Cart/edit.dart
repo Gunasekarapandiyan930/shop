@@ -1,8 +1,8 @@
 
-import 'package:apkrestart/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Edit extends StatefulWidget {
   final mydata;
@@ -266,11 +266,8 @@ class _EditState extends State<Edit> {
                         backgroundColor: Colors.green,
                         duration: Duration(seconds: 1),
                       ));
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Main(),
-                          ));
+                      context.pushNamed('main');
+                    
                     },
                   )
                 ],

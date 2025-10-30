@@ -3,12 +3,12 @@ import 'package:apkrestart/Homescreen/homescreen.dart';
 import 'package:apkrestart/Categories/categories.dart';
 import 'package:apkrestart/Profile/profilee.dart';
 import 'package:apkrestart/accountpage.dart';
-import 'package:apkrestart/splashscreen.dart';
+import 'package:apkrestart/config/router.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 Future<void>_firebaseMessagingBackgroundHandler(RemoteMessage msg)async{
@@ -32,13 +32,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      title: 'APK Restart',
-      debugShowCheckedModeBanner: false,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,builder: (context, child) {
+       return  MaterialApp.router(
+       routerConfig: router,
+        title: 'APK Restart',
+        debugShowCheckedModeBanner: false,
+        
+        
+       // home: SplashScareen(),
+      );
+        
+      },);
       
-      
-      home: SplashScareen(),
-    );
   }
 }
 
