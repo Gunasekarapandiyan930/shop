@@ -1,8 +1,10 @@
 
-import 'package:apkrestart/Homescreen/homescreen.dart';
-import 'package:apkrestart/Categories/categories.dart';
-import 'package:apkrestart/Profile/profilee.dart';
-import 'package:apkrestart/accountpage.dart';
+
+import 'package:apkrestart/Screens/Categories/categories.dart';
+
+import 'package:apkrestart/Screens/Homescreen/homescreen.dart';
+import 'package:apkrestart/Screens/Profile/profilee.dart';
+import 'package:apkrestart/Screens/accountpage.dart';
 import 'package:apkrestart/config/router.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,23 +19,23 @@ Future<void>_firebaseMessagingBackgroundHandler(RemoteMessage msg)async{
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: const FirebaseOptions(
+      options:   FirebaseOptions(
     apiKey: "AIzaSyAJkSmcdHbYqc9vqW9fpJbIWTxrF9VmuNI",
     appId: "1:860686353761:android:95ca80c768967f926cb120",
     messagingSenderId: "860686353761",
     projectId:"shopping-ea557",
   ));
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  runApp(const MyApp());
+  runApp(  MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+    MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize:   Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,builder: (context, child) {
        return  MaterialApp.router(
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Main extends StatefulWidget {
-  const Main({super.key});
+    Main({super.key});
 
   @override
   State<Main> createState() => MainState();
@@ -62,20 +64,20 @@ class _MainState {}
 class MainState extends State<Main> {
   String? token;
   final List<Widget> _screens = [
-    const Center(child: Text(" Home Page", style: TextStyle(fontSize: 25))),
-    const Center(
+      Center(child: Text(" Home Page", style: TextStyle(fontSize: 25))),
+      Center(
         child: Text(" Categories Page", style: TextStyle(fontSize: 25))),
-    const Center(child: Text(" Cart Page", style: TextStyle(fontSize: 25))),
-    const Center(child: Text(" Profile Page", style: TextStyle(fontSize: 25))),
+      Center(child: Text(" Cart Page", style: TextStyle(fontSize: 25))),
+      Center(child: Text(" Profile Page", style: TextStyle(fontSize: 25))),
   ];
 
   int _selectedIndex = 0;
 
   final List<Widget> allscreens = [
-    const Homescreen(),
-    const Categories(),
-    const AccountPage(),
-    const Profile(),
+      Homescreen(),
+      Categories(),
+      AccountPage(),
+     Profile(),
   ];
   @override
   void initState() {
@@ -100,14 +102,14 @@ class MainState extends State<Main> {
     return Scaffold(
       body: allscreens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
-        animationDuration: const Duration(milliseconds: 500),
+        animationDuration:   Duration(milliseconds: 500),
 
         backgroundColor: Colors.white,
-        color: const Color(0xFF4A148C),
+        color:   Color(0xFF4A148C),
 
         onTap: _onItem,
        
-        items: const [
+        items:   [
           Icon(
             Icons.home,
             color: Colors.white,
