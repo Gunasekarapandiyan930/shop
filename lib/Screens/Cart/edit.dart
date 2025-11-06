@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 class Edit extends StatefulWidget {
   final mydata;
-    Edit({super.key, this.mydata});
+    const Edit({super.key, this.mydata});
 
   @override
   State<Edit> createState() => _EditState();
@@ -45,7 +45,7 @@ class _EditState extends State<Edit> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
           Padding(
-            padding:   EdgeInsets.all(20.0),
+            padding:   const EdgeInsets.all(20.0),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,11 +58,11 @@ class _EditState extends State<Edit> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon:   Icon(
+                            icon:   const Icon(
                               Icons.arrow_back,
                               size: 25,
                             )),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Text(
                           "Edit Profile",
                           style: TextStyle(
@@ -90,10 +90,10 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.lightBlue),
                         ),
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                    SizedBox(
                     height: 24.h,
@@ -111,7 +111,7 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                         border: OutlineInputBorder()),
+                         border: const OutlineInputBorder()),
                   ),
                    SizedBox(
                     height: 24.h,
@@ -130,7 +130,7 @@ class _EditState extends State<Edit> {
                          labelStyle: TextStyle(
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
-                        ), border: OutlineInputBorder()),
+                        ), border: const OutlineInputBorder()),
                   ),
                    SizedBox(
                     height: 24.h,
@@ -150,7 +150,7 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                  SizedBox(
                     height: 24.h,
@@ -170,7 +170,7 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                 SizedBox(
                     height: 24.h,
@@ -198,7 +198,7 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                        border:   OutlineInputBorder()),
+                        border:   const OutlineInputBorder()),
                   ),
                   SizedBox(
                     height: 24.h,
@@ -227,7 +227,7 @@ class _EditState extends State<Edit> {
                            fontSize: 18.sp,           
       fontWeight: FontWeight.bold, 
                         ),
-                        border:   OutlineInputBorder()),
+                        border:   const OutlineInputBorder()),
                   ),
               SizedBox(
                     height: 30.h,
@@ -259,7 +259,7 @@ class _EditState extends State<Edit> {
                         "password": password.text.trim(),
                         "confirmpassword": confirmpassword.text.trim()
                       });
-                      ScaffoldMessenger.of(context).showSnackBar(  SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(  const SnackBar(
                         content: Text(
                           "update Success",
                           style: TextStyle(fontWeight: FontWeight.bold),

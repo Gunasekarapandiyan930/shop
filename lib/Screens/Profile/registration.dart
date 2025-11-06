@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
-    Register({super.key});
+    const Register({super.key});
 
   @override
   State<Register> createState() => _SignupState();
@@ -42,12 +42,12 @@ class _SignupState extends State<Register> {
       body: SafeArea(
         child: Container(
           height: MediaQuery.of(context).size.height,
-          width: double.infinity,decoration:   BoxDecoration(
+          width: double.infinity,decoration:   const BoxDecoration(
           image: DecorationImage(fit: BoxFit.cover,
             image: NetworkImage('https://i.pinimg.com/236x/b9/70/40/b970409ee8382fb687bb9c2a5a97f9e9.jpg'))
         ),
           child: SingleChildScrollView(
-            padding:   EdgeInsets.all(20),
+            padding:   const EdgeInsets.all(20),
             child: Form(
               key: formkey,
               child: Column(
@@ -60,7 +60,7 @@ class _SignupState extends State<Register> {
                             onPressed: () {
                          context.pop();
                             },
-                            icon:   Icon(
+                            icon:   const Icon(
                               Icons.arrow_back,
                               size: 25,
                             )),
@@ -92,10 +92,10 @@ class _SignupState extends State<Register> {
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.lightBlue),
                         ),
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                  SizedBox(
                     height: 24.h,
@@ -114,10 +114,10 @@ class _SignupState extends State<Register> {
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
                         ),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.lightBlue),
                         ),
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                   SizedBox(
                     height: 24.h,
@@ -137,9 +137,9 @@ class _SignupState extends State<Register> {
                                fontSize: 18.sp,           
           fontWeight: FontWeight.bold, 
                             ),
-                            enabledBorder: OutlineInputBorder(
+                            enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.lightBlue),
-                            ), border: OutlineInputBorder()),
+                            ), border: const OutlineInputBorder()),
                   ),
                  SizedBox(
                     height: 24.h,
@@ -159,10 +159,10 @@ class _SignupState extends State<Register> {
                                fontSize: 18.sp,           
           fontWeight: FontWeight.bold, 
                             ),
-                            enabledBorder: OutlineInputBorder(
+                            enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.lightBlue),
                             ),
-                         border: OutlineInputBorder()),
+                         border: const OutlineInputBorder()),
                   ),
                  SizedBox(
                     height: 24.h,
@@ -182,11 +182,11 @@ class _SignupState extends State<Register> {
                                fontSize: 18.sp,           
           fontWeight: FontWeight.bold, 
                             ),
-                            enabledBorder: OutlineInputBorder(
+                            enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.lightBlue),
                             ),
                         
-                         border: OutlineInputBorder()),
+                         border: const OutlineInputBorder()),
                   ),
                   SizedBox(
                     height: 24.h,
@@ -213,10 +213,10 @@ class _SignupState extends State<Register> {
                                fontSize: 18.sp,           
           fontWeight: FontWeight.bold, 
                             ),
-                            enabledBorder:   OutlineInputBorder(
+                            enabledBorder:   const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.lightBlue),
                             ),
-                        border:   OutlineInputBorder()),
+                        border:   const OutlineInputBorder()),
                   ),
                  SizedBox(
                     height: 24.h,
@@ -245,10 +245,10 @@ class _SignupState extends State<Register> {
                                fontSize: 18.sp,           
           fontWeight: FontWeight.bold, 
                             ),
-                            enabledBorder:   OutlineInputBorder(
+                            enabledBorder:   const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.lightBlue),
                             ),
-                        border:   OutlineInputBorder()),
+                        border:   const OutlineInputBorder()),
                   ),
         SizedBox(
                     height: 30.h,
@@ -272,7 +272,7 @@ class _SignupState extends State<Register> {
                           "password": password.text,
                           "confirmpassword": confirmpassword.text
                         });
-                        ScaffoldMessenger.of(context).showSnackBar(  SnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(  const SnackBar(
                           content: Text(
                             "Registration Successfully",
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -283,7 +283,7 @@ class _SignupState extends State<Register> {
                        context.pushNamed('main');
                       }
                     },style: ButtonStyle( backgroundColor:WidgetStateProperty.all<Color>(Colors.purple),),
-                    child:    Text(
+                    child:    const Text(
                       "Submit",
                       style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,backgroundColor: Colors.purple,
                       fontSize: 20),
@@ -320,7 +320,7 @@ class _SignupState extends State<Register> {
                    SizedBox(
                     height: 12.h,
                   ),
-                    Divider(),
+                    const Divider(),
                   SizedBox(
                     height: 12.h,
                   ),
@@ -335,7 +335,7 @@ class _SignupState extends State<Register> {
                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdKMbkSnZrrX1GK4BdQ3NiDDsV7QROaFEpmQ&s",
                           height: 30.h,
                         ),
-                          Text(
+                          const Text(
                           "Sign up with Google",
                           style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
                         )

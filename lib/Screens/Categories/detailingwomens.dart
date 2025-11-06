@@ -7,7 +7,7 @@ class Detailingwomens extends StatefulWidget {
 
   
   final Map allproducts;
-    Detailingwomens({super.key, required this.allproducts});
+    const Detailingwomens({super.key, required this.allproducts});
 
   @override
   State<Detailingwomens> createState() => _DetailingwomensState();
@@ -16,12 +16,12 @@ class Detailingwomens extends StatefulWidget {
 class _DetailingwomensState extends State<Detailingwomens> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor:   Color(0xFFfef5f1),
+    return Scaffold(backgroundColor:   const Color(0xFFfef5f1),
      appBar: AppBar(backgroundColor: Colors.red,
         leading: IconButton(onPressed: () {
                  context.pop();
-                }, icon:   Icon(Icons.arrow_back,color: Colors.white,)),
-                title: Text(widget.allproducts['name'],style:   TextStyle(color: Colors.white),),
+                }, icon:   const Icon(Icons.arrow_back,color: Colors.white,)),
+                title: Text(widget.allproducts['name'],style:   const TextStyle(color: Colors.white),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -32,7 +32,7 @@ class _DetailingwomensState extends State<Detailingwomens> {
                   Positioned(top: 20,right: 20,
                     child: IconButton(onPressed: () {context.pop();
                     
-                  }, icon:   Icon(Icons.favorite))),
+                  }, icon:   const Icon(Icons.favorite))),
                   Positioned.fill(child: Image.asset(fit: BoxFit.cover,
                     widget.allproducts["image"]?? "nodata found"
                   ))
@@ -41,7 +41,7 @@ class _DetailingwomensState extends State<Detailingwomens> {
             ),
             Expanded(
               child: Container(
-              padding:   EdgeInsets.all(20),
+              padding:   const EdgeInsets.all(20),
                 color: Colors.white,
                 child: Column( crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,17 +73,17 @@ class _DetailingwomensState extends State<Detailingwomens> {
       "Color:",
       style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
     ),
-    SizedBox(width: 10),
+    const SizedBox(width: 10),
     Expanded(   
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CircleAvatar(radius: 15.r, backgroundColor: Colors.red),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CircleAvatar(radius: 15.r, backgroundColor: Colors.black),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CircleAvatar(radius: 15.r, backgroundColor: Colors.yellow),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           CircleAvatar(radius: 15.r, backgroundColor: Colors.blue),
         ],
       ),
@@ -120,7 +120,7 @@ class _DetailingwomensState extends State<Detailingwomens> {
                 ),*/
                       Text("Details",style: TextStyle( fontSize: 18.sp,
                         fontWeight: FontWeight.bold),),
-                        Text(widget.allproducts["description"],style:   TextStyle(fontWeight: FontWeight.w500),),
+                        Text(widget.allproducts["description"],style:   const TextStyle(fontWeight: FontWeight.w500),),
                          //  SizedBox(height: 26),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -135,7 +135,7 @@ margin: EdgeInsets.all(10.r),
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child:   Text(
+                    child:   const Text(
                       "Add to Cart",
                       style: TextStyle(color: Colors.white),
                     ),
@@ -150,7 +150,7 @@ margin: EdgeInsets.all(10.r),
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child:   Text(
+                    child:   const Text(
                       "Buy Now",
                       style: TextStyle(color: Colors.white),
                     ),

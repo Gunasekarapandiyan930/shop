@@ -47,11 +47,11 @@ routes: [
 
       name: 'main',
       path: '/main',
-      builder: (context, state) => Main()),
+      builder: (context, state) => const Main()),
   GoRoute(
       name: 'home',
       path: '/home',
-      builder: (context, state) =>  Homescreen()),
+      builder: (context, state) =>  const Homescreen()),
   GoRoute(
       name: 'categories',
       path: '/categories',
@@ -59,7 +59,7 @@ routes: [
   GoRoute(
       name: 'profile',
       path: '/profile',
-      builder: (context, state) =>  Profile()),
+      builder: (context, state) =>  const Profile()),
   GoRoute(
       name: 'account',
       path: '/account',
@@ -114,15 +114,15 @@ routes: [
   GoRoute(
       name: 'register',
       path: '/register',
-      builder: (context, state) => Register()),
+      builder: (context, state) => const Register()),
   GoRoute(
       name: 'signup',
       path: '/signup',
-      builder: (context, state) =>  SignUp()),
+      builder: (context, state) =>  const SignUp()),
   GoRoute(
-      name: 'cart', path: '/cart', builder: (context, state) =>  Cart()),
+      name: 'cart', path: '/cart', builder: (context, state) =>  const Cart()),
   GoRoute(
-      name: 'edit', path: '/edit', builder: (context, state) =>  Edit()),
+      name: 'edit', path: '/edit', builder: (context, state) =>  const Edit()),
   GoRoute(
       name: 'auto',
       path: '/auto',

@@ -5,11 +5,11 @@ import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Signin extends StatelessWidget {
-    Signin({super.key});
+    const Signin({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return   MaterialApp(
+    return   const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SignUp(),
     );
@@ -17,7 +17,7 @@ class Signin extends StatelessWidget {
 }
 
 class SignUp extends StatefulWidget {
-    SignUp({super.key});
+    const SignUp({super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -40,13 +40,13 @@ class _SignUpState extends State<SignUp> {
       body: Form(
         key: formkey,
         child: Container(
-          decoration:   BoxDecoration(
+          decoration:   const BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
                       "https://media.istockphoto.com/id/2163983591/vector/abstract-multicolored-gradient-vector-background-design-wallpaper-template-with-geometric.jpg?s=612x612&w=0&k=20&c=wb1CT6XfnlzyhA63kMaN6LW0EM-ltGJSPSPlSW9qHos="))),
           child: Padding(
-            padding:   EdgeInsets.only(
+            padding:   const EdgeInsets.only(
               top: 280,
               left: 10,
             ),
@@ -61,7 +61,7 @@ class _SignUpState extends State<SignUp> {
                         onPressed: () {
                       context.pop();
                         },
-                        icon:   Icon(
+                        icon:   const Icon(
                           Icons.arrow_back,
                           size: 25,
                         )),
@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
                SizedBox(
                   height: 30.h,
                 ),
-                Container(margin:   EdgeInsets.all(20),  decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
+                Container(margin:   const EdgeInsets.all(20),  decoration: BoxDecoration(border: Border.all(color: Colors.blue)),
                   child: TextFormField(
                     controller: name,
                     validator: (value) {
@@ -87,13 +87,13 @@ class _SignUpState extends State<SignUp> {
                       }
                       return null;
                     },
-                    decoration:   InputDecoration(border: OutlineInputBorder(),
+                    decoration:   InputDecoration(border: const OutlineInputBorder(),
                       labelText: 'Name or Email :',
                       labelStyle: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.lightBlue),
                       ),
                     ),
@@ -113,7 +113,7 @@ margin: EdgeInsets.all(20.r),
                       return null;
                     },
                     decoration: InputDecoration(
-                      border:   OutlineInputBorder(),
+                      border:   const OutlineInputBorder(),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -127,7 +127,7 @@ margin: EdgeInsets.all(20.r),
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
-                      enabledBorder:   OutlineInputBorder(
+                      enabledBorder:   const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.lightBlue),
                       ),
                   
@@ -149,7 +149,7 @@ margin: EdgeInsets.all(20.r),
                       }
                       return null;
                     },
-                    decoration: InputDecoration(border:   OutlineInputBorder(),
+                    decoration: InputDecoration(border:   const OutlineInputBorder(),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -163,7 +163,7 @@ margin: EdgeInsets.all(20.r),
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
-                      enabledBorder:   OutlineInputBorder(
+                      enabledBorder:   const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.lightBlue),
                       ),
                   
@@ -192,7 +192,7 @@ margin: EdgeInsets.all(20.r),
                         context.pushNamed('register');
                         }
                       },
-                      child:   Text(
+                      child:   const Text(
                         "Submit",
                         style: TextStyle(
                             color: Colors.white,

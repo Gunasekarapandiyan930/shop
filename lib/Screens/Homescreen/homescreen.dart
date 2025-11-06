@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class Homescreen extends StatefulWidget {
-    Homescreen({super.key});
+    const Homescreen({super.key});
 
   @override
   State<Homescreen> createState() => _HomescreenState();
@@ -136,11 +136,11 @@ class _HomescreenState extends State<Homescreen> {
           backgroundColor: Colors.white54,
           body: SingleChildScrollView(
             child: Padding(
-              padding:   EdgeInsets.all(8.0),
+              padding:   const EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   Padding(
-                    padding:   EdgeInsets.all(25.0),
+                    padding:   const EdgeInsets.all(25.0),
                     child: InkWell(
                       onTap: () {
                           context.pushNamed('search');
@@ -160,14 +160,14 @@ class _HomescreenState extends State<Homescreen> {
                              context.pushNamed('search');
                           },
                           decoration:   InputDecoration(
-                              prefixIcon: Icon(Icons.search),
+                              prefixIcon: const Icon(Icons.search),
                               hintText: "Search here",
                               hintStyle: TextStyle(
                                   fontSize: 20.sp, fontWeight: FontWeight.w500),
                               fillColor: Colors.grey,
                               filled: true,
-                              contentPadding: EdgeInsets.symmetric(vertical: 15),
-                              border: OutlineInputBorder()),
+                              contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                              border: const OutlineInputBorder()),
                         ),
                       ),
                     ),
@@ -194,7 +194,7 @@ class _HomescreenState extends State<Homescreen> {
                             child: category(
                                 color: Colors.red,
                                 text: "Today's deal",
-                                icon:   Icon(Icons.library_add)),
+                                icon:   const Icon(Icons.library_add)),
                           ),
                         ),
                         InkWell(
@@ -204,7 +204,7 @@ class _HomescreenState extends State<Homescreen> {
                           child: category(
                               color: Colors.lightBlue,
                               text: "Flash Deal",
-                              icon:   Icon(Icons.storm)),
+                              icon:   const Icon(Icons.storm)),
                         ),
                         InkWell(
                           onTap: () {
@@ -213,7 +213,7 @@ class _HomescreenState extends State<Homescreen> {
                           child: category(
                               color: Colors.grey,
                               text: "Brands",
-                              icon:   Icon(Icons.branding_watermark_rounded)),
+                              icon:   const Icon(Icons.branding_watermark_rounded)),
                         ),
                         InkWell(onTap: () {
                             context.pushNamed('top');
@@ -221,7 +221,7 @@ class _HomescreenState extends State<Homescreen> {
                           child: category(
                               color: Colors.green,
                               text: "Top Sellers",
-                              icon:   Icon(Icons.shop)),
+                              icon:   const Icon(Icons.shop)),
                         ),
                       
                       ],
@@ -253,7 +253,7 @@ class _HomescreenState extends State<Homescreen> {
                         child: Container(
                           height: 150.h,
                           width: 150.w,
-                          padding:   EdgeInsets.all(5),
+                          padding:   const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
                           ),
@@ -280,9 +280,9 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                        Spacer(),
+                        const Spacer(),
                       Padding(
-                        padding:   EdgeInsets.all(20.0),
+                        padding:   const EdgeInsets.all(20.0),
                         child: InkWell(onTap: () {
                           context.push('/seeall');
                       
@@ -355,7 +355,7 @@ margin: EdgeInsets.all(10.r),
                     child: GridView.builder(
                       shrinkWrap: true,
                       gridDelegate:
-                            SliverGridDelegateWithFixedCrossAxisCount(
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: 0.7,
                               crossAxisCount: 2,
                               crossAxisSpacing: 10,
@@ -379,7 +379,7 @@ margin: EdgeInsets.all(10.r),
                                   height: 200.h,
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    borderRadius:   BorderRadius.vertical(
+                                    borderRadius:   const BorderRadius.vertical(
                                         top: Radius.circular(10)),
                                     image: DecorationImage(
                                       image: NetworkImage(
@@ -404,7 +404,7 @@ margin: EdgeInsets.all(10.r),
                               // Price
                               Text(
                                 productlist[index]["price"].toString(),
-                                style:   TextStyle(
+                                style:   const TextStyle(
                                     color: Colors.green,
                                     fontWeight: FontWeight.w600),
                               )
@@ -437,7 +437,7 @@ margin: EdgeInsets.all(3.r),
           icon!,
           Text(maxLines: 1,
             text!,
-            style:   TextStyle(fontWeight: FontWeight.bold),
+            style:   const TextStyle(fontWeight: FontWeight.bold),
           )
         ],
       ),

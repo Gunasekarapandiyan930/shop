@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
+
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -80,7 +80,7 @@ class _AccountPageState extends State<AccountPage> {
               children: [
                 CircleAvatar(
                   radius: 30.r,
-                  backgroundImage: NetworkImage(
+                  backgroundImage: const NetworkImage(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNcpockMAuShiAgEXZMpFLQGgJNYIw2pfnRJ5AHfCTZJNYJ1DasbedZaQUlAwU8zKskYk&usqp=CAU"), // Profile Image
                 ),
                 SizedBox(width: 10.w),
@@ -91,7 +91,7 @@ class _AccountPageState extends State<AccountPage> {
                       Text("Monica",
                           style: TextStyle(
                               fontSize: 20.sp, fontWeight: FontWeight.bold)),
-                      Text("Ganthipuram, Coimapadore",
+                      const Text("Ganthipuram, Coimapadore",
                           style: TextStyle(color: Colors.black)),
                     ],
                   ),
@@ -113,10 +113,10 @@ class _AccountPageState extends State<AccountPage> {
                   children: [
                     InkWell(
                         onTap: () {
-                          Share.share(
-                            'Hey! Check out this awesome app!',
-                            subject: 'Share Option',
-                          );
+                          // Share.share(
+                          //   'Hey! Check out this awesome app!',
+                          //   subject: 'Share Option',
+                          // );
                         },
                         child: const Text("Share",
                             style: TextStyle(
@@ -129,7 +129,7 @@ class _AccountPageState extends State<AccountPage> {
                 ),
                 Column(
                   children: [
-                    Text("Earn",
+                    const Text("Earn",
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold)),
                     Text("1502",

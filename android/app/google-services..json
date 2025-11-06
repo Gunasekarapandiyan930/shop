@@ -5,11 +5,12 @@
     "storage_bucket": "shopping-ea557.firebasestorage.app"
   },
   "client": [
+   
     {
       "client_info": {
-        "mobilesdk_app_id": "1:860686353761:android:95ca80c768967f926cb120",
+        "mobilesdk_app_id": "1:860686353761:android:d5705daf8fccc2366cb120",
         "android_client_info": {
-          "package_name": "com.example.apkrestart"
+          "package_name": "com.guna.shopnow"
         }
       },
       "oauth_client": [],

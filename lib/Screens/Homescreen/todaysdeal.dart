@@ -1,4 +1,5 @@
-import 'package:apkrestart/Repo/todaysapi.dart';
+import 'package:apkrestart/Repo/repository.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,7 @@ class _TodaysdealState extends State<Todaysdeal> {
   }
 
   mouse() async {
-    var res = await Reposity().getuser();
+    var res = await Repository().getuser();
     setState(() {
       apidesign = res["storedata"]["products"];
     });

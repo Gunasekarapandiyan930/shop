@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class Cart extends StatefulWidget {
-    Cart({super.key});
+    const Cart({super.key});
 
   @override
   State<Cart> createState() => _CartState();
@@ -79,12 +79,12 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:   Color.fromARGB(255, 182, 22, 210),
+      backgroundColor:   const Color.fromARGB(255, 182, 22, 210),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding:   EdgeInsets.all(15),
+              padding:   const EdgeInsets.all(15),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,7 +92,7 @@ class _CartState extends State<Cart> {
                   Stack(
                     children: [
                        InkWell(
-                        child:  CircleAvatar(radius: 30.r, child: Icon(Icons.person)),
+                        child:  CircleAvatar(radius: 30.r, child: const Icon(Icons.person)),
                         onTap: () {
                           context.pushNamed('profile');
                           
@@ -106,7 +106,7 @@ class _CartState extends State<Cart> {
                           radius: 12.r,
                           backgroundColor: Colors.white,
                           child: InkWell(
-                            child:   Icon(Icons.edit,
+                            child:   const Icon(Icons.edit,
                                 size: 16, color: Colors.purple),
                             onTap: () {
                               context.pushNamed('edit');
@@ -119,7 +119,7 @@ class _CartState extends State<Cart> {
                   ),
 
                   //SizedBox(20),
-                    Text(
+                    const Text(
                     "Login/Registration",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
@@ -127,7 +127,7 @@ class _CartState extends State<Cart> {
                    SizedBox(
                     width: 100.w,
                   ),
-                    Icon(Icons.exit_to_app),
+                    const Icon(Icons.exit_to_app),
                 ],
               ),
             ),
@@ -227,7 +227,7 @@ margin: EdgeInsets.all(20.r),
               color: Colors.white,
               width: 500.w,
               child: GridView.builder(
-                gridDelegate:   SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate:   const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3),
                 itemCount: grid.length,
                 shrinkWrap: true,
@@ -255,7 +255,7 @@ margin: EdgeInsets.all(20.r),
                 ),
                 title: Text(
                   view[index]['name'],
-                  style:   TextStyle(color: Colors.white),
+                  style:   const TextStyle(color: Colors.white),
                 ),
               ),
             ),

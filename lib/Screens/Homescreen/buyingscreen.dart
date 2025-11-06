@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 class Buyingscreen extends StatefulWidget {
   final Map documents;
 
-    Buyingscreen({
+    const Buyingscreen({
     super.key,
     required this.documents,
   });
@@ -24,21 +24,21 @@ class _BuyingscreenState extends State<Buyingscreen> {
             onPressed: () {
              context.pop();
             },
-            icon:   Icon(
+            icon:   const Icon(
               Icons.arrow_back,
               color: Colors.white,
             )),
         title: Text(
           widget.documents['title'],
-          style:   TextStyle(color: Colors.white),
+          style:   const TextStyle(color: Colors.white),
         ),
       ),
       body: Padding(
-        padding:   EdgeInsets.all(10.0),
+        padding:   const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
             SizedBox(
               height: 400.h,
               width: double.infinity,
@@ -55,11 +55,11 @@ class _BuyingscreenState extends State<Buyingscreen> {
                   right: 10,
                   child: IconButton(
                       onPressed: () {},
-                      icon:   Icon(Icons.favorite_outline_outlined)),
+                      icon:   const Icon(Icons.favorite_outline_outlined)),
                 )
               ]),
             ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
             Row(
               children: [
                   Text(
@@ -141,7 +141,7 @@ class _BuyingscreenState extends State<Buyingscreen> {
                 ),
               ],
             ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             Expanded(
               child: Row(
                 children: [
@@ -194,7 +194,7 @@ class _BuyingscreenState extends State<Buyingscreen> {
                 )
               ],
             ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             Expanded(
               child: Row(
                 children: [
@@ -228,7 +228,7 @@ margin: EdgeInsets.all(10.r),
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:   Text(
+                  child:   const Text(
                     "Add to Cart",
                     style: TextStyle(color: Colors.white),
                   ),
@@ -243,7 +243,7 @@ margin: EdgeInsets.all(10.r),
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:   Text(
+                  child:   const Text(
                     "Buy Now",
                     style: TextStyle(color: Colors.white),
                   ),

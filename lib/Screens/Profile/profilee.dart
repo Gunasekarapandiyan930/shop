@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class Profile extends StatefulWidget {
-    Profile({super.key});
+    const Profile({super.key});
 
   @override
   State<Profile> createState() => _MyWidgetState();
@@ -26,7 +26,7 @@ class _MyWidgetState extends State<Profile> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: double.infinity,
-            decoration:   BoxDecoration(
+            decoration:   const BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
@@ -59,7 +59,7 @@ class _MyWidgetState extends State<Profile> {
                             SizedBox(
                             height: 40.h,
                           ),
-                            Text(
+                            const Text(
                             "SIGN IN",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
@@ -72,11 +72,11 @@ class _MyWidgetState extends State<Profile> {
                             width: 250.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color:   Color.fromARGB(255, 4, 114, 204),
+                              color:   const Color.fromARGB(255, 4, 114, 204),
                             ),
                             child: Center(
                               child: TextFormField(
-                                style:   TextStyle(
+                                style:   const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16),
@@ -91,7 +91,7 @@ class _MyWidgetState extends State<Profile> {
                                   }
                                   return null;
                                 },
-                                decoration:   InputDecoration(
+                                decoration:   const InputDecoration(
                                     border: InputBorder.none,
                                     prefixIcon: Icon(
                                       Icons.contact_emergency,
@@ -112,16 +112,16 @@ class _MyWidgetState extends State<Profile> {
                             width: 250.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color:   Color.fromARGB(255, 4, 114, 204),
+                              color:   const Color.fromARGB(255, 4, 114, 204),
                             ),
                             child: Center(
                               child: TextFormField(
-                                style:   TextStyle(
+                                style:   const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16),
                                 controller: password,
-                                decoration:   InputDecoration(
+                                decoration:   const InputDecoration(
                                     border: InputBorder.none,
                                     prefixIcon: Icon(
                                       Icons.lock,
@@ -137,7 +137,7 @@ class _MyWidgetState extends State<Profile> {
                             SizedBox(
                             height: 10.h,
                           ),
-                            Padding(
+                            const Padding(
                             padding: EdgeInsets.only(left: 100),
                             child: Text(
                               "Forget Password ?",
@@ -158,10 +158,10 @@ class _MyWidgetState extends State<Profile> {
                               height: 50.h,
                               width: 150.w,
                               decoration: BoxDecoration(
-                                color:   Color.fromARGB(255, 4, 114, 204),
+                                color:   const Color.fromARGB(255, 4, 114, 204),
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              child:   Center(
+                              child:   const Center(
                                 child: Text(
                                   "Login",
                                   style: TextStyle(
@@ -179,7 +179,7 @@ class _MyWidgetState extends State<Profile> {
                                      context.pushNamed('main');
 
                                 ScaffoldMessenger.of(context)
-                                    .showSnackBar(  SnackBar(
+                                    .showSnackBar(  const SnackBar(
                                   content: Text(
                                     "Login successfully",
                                   ),
@@ -195,7 +195,7 @@ class _MyWidgetState extends State<Profile> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                                Text(
+                                const Text(
                                 "Don't have an account?",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -208,7 +208,7 @@ class _MyWidgetState extends State<Profile> {
                                 onTap: () {
                                 context.pushNamed('signup');
                                 },
-                                child:   Text(
+                                child:   const Text(
                                   "Sign Up",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -243,7 +243,7 @@ class _MyWidgetState extends State<Profile> {
                               height: 20.h,
                               width: 20.w,
                               decoration:
-                                    BoxDecoration(shape: BoxShape.circle),
+                                    const BoxDecoration(shape: BoxShape.circle),
                               child: InkWell(
                                 onTap: () {},
                                 child: Image.network(
@@ -262,7 +262,7 @@ class _MyWidgetState extends State<Profile> {
                               height: 30.h,
                               width: 30.w,
                               decoration:
-                                    BoxDecoration(shape: BoxShape.circle),
+                                    const BoxDecoration(shape: BoxShape.circle),
                               child: Image.network(
                                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3bs7ImPUjJBAVwguTmI9u9g10SJnDYKiYaQ&s",
                                 fit: BoxFit.cover,
@@ -282,7 +282,7 @@ class _MyWidgetState extends State<Profile> {
                                 height: 30.h,
                                 width: 30.w,
                                 decoration:
-                                      BoxDecoration(shape: BoxShape.circle),
+                                      const BoxDecoration(shape: BoxShape.circle),
                                 child: Image.network(
                                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vgrH3yTeMWzEKUVsgZvfm7Zenya2VNv7XbgvfchdvQ3uhpB1JJTcfSSl8GUYq7pMNK4&usqp=CAU",
                                   fit: BoxFit.cover,
