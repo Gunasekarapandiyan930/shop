@@ -60,9 +60,9 @@ class _SignupState extends State<Register> {
                             onPressed: () {
                          context.pop();
                             },
-                            icon:   const Icon(
+                            icon: Icon(
                               Icons.arrow_back,
-                              size: 25,
+                              size: 25.sp,
                             )),
                          SizedBox(width: 20.w),
                           Text(

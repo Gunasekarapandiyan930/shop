@@ -1,10 +1,10 @@
 
 
-import 'package:apkrestart/Screens/Categories/categories.dart';
+import 'package:apkrestart/View/Categories/categories.dart';
 
-import 'package:apkrestart/Screens/Homescreen/homescreen.dart';
-import 'package:apkrestart/Screens/Profile/profilee.dart';
-import 'package:apkrestart/Screens/accountpage.dart';
+import 'package:apkrestart/View/Homescreen/homescreen.dart';
+import 'package:apkrestart/View/Profile/profilee.dart';
+import 'package:apkrestart/View/accountpage.dart';
 import 'package:apkrestart/config/router.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';

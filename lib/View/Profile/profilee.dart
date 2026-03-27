@@ -11,6 +11,7 @@ class Profile extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<Profile> {
+  bool isLoading = false;
   bool box = false;
 
   TextEditingController email = TextEditingController();
